@@ -1,5 +1,5 @@
 clean:
-	rm -rfv build
+	rm -rfv target
 	rm -rfv pom.xml
 
 pom:

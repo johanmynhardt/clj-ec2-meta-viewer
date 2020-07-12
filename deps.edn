@@ -1,8 +1,17 @@
-{:deps {ring-server {:mvn/version "0.5.0"}}
+{:deps {ring-server {:mvn/version "0.5.0"}
+        org.clojure/tools.cli {:mvn/version "1.0.194"}}
  
  :paths ["src"]
  
  :aliases
- {:depstar 
+ {:run
+  {:main-opts ["-m" "clj-ec2-meta-viewer.core"]}
+  
+  :depstar 
   {:extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}
-   :main-opts ["-m" "hf.depstar.uberjar" "build/clj-ec2-meta-viewer.jar" "-C" "-m" "clj-ec2-meta-viewer.core"]}}}
+   :main-opts ["-m" "hf.depstar.uberjar" "target/clj-ec2-meta-viewer.jar" "-C" "-m" "clj-ec2-meta-viewer.core"]}
+  
+  :doc
+  {:extra-paths ["doc"]
+   :extra-deps {codox {:mvn/version "0.10.7"}}
+   :main-opts ["-m" "generate"]}}}
